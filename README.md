@@ -6,6 +6,8 @@ This is a simple flask app for matching content to users.
 
 [user-content-match.onrender.com](https://user-content-match.onrender.com/)
 
+![demo gif](./app/static/images/demo.gif)
+
 # Data
 
 For sample data see `./data`
