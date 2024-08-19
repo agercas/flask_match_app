@@ -1,0 +1,10 @@
+{
+    "id": "132",
+    "title": "Automotive Industry Advances",
+    "content": "Recent advances in the automotive industry.",
+    "tags": [
+        {"type": "sector", "value": "Automotive", "threshold": 0.5},
+        {"type": "country", "value": "France", "threshold": 0.1},
+        {"type": "country", "value": "UK", "threshold": 0.2}
+    ]
+}

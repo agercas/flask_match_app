@@ -1,0 +1,6 @@
+{
+    "name": "Jane Smith",
+    "interests": [
+        {"type": "instrument", "value": "AAPL", "threshold": 0.7}
+    ]
+}

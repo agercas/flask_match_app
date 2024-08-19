@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center">All Content</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in content %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.content }}</td>
+            <td>
+                <ul>
+                    {% for tag in item.tags %}
+                    <li>Type: {{ tag.type }}, Value: {{ tag.value }}, Threshold: {{ tag.threshold }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

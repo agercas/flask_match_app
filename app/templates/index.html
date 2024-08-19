@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center">User Content Matcher</h1>
+<div class="file-upload-form">
+    <h2>Upload JSON File</h2>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+        <div class="form-group mb-2">
+            <input type="file" name="file" id="fileInput" class="d-none" accept=".json">
+            <label for="fileInput" class="btn btn-primary">Choose and Upload File</label>
+        </div>
+    </form>
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="flash-messages">
+    <div class="alert alert-info" role="alert">
+        <ul class="mb-0">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="matched-content">
+    <h2>Matched Content</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Matched Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user, content_list in matched_content.items() %}
+            <tr>
+                <td class="align-middle">
+                    <p>{{ user }}</p>
+                </td>
+                <td>
+                    <ul class="list-group list-group-flush">
+                        {% for content in content_list %}
+                        <li class="list-group-item border-0 px-0">
+                            <p>{{ content.title }} ({{ content.content }})</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('fileInput').addEventListener('change', function() {
+        document.getElementById('uploadForm').submit();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+    "id": "127",
+    "title": "Tech Sector Overview",
+    "content": "An overview of the technology sector.",
+    "tags": [
+        {"type": "sector", "value": "Technology", "threshold": 0.5},
+        {"type": "country", "value": "France", "threshold": 0.6},
+        {"type": "country", "value": "UK", "threshold": 0.7}
+    ]
+}
